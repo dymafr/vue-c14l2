@@ -21,7 +21,9 @@ const pages: { [s: string]: C } = {
 <template>
   <div class="app-container">
     <TheHeader class="header" />
-    <div class="app-content"><Component :is="Boutique" /></div>
+    <div class="app-content">
+      <Component :is="pages[state.page]" />
+    </div>
     <TheFooter class="footer" />
   </div>
 </template>
