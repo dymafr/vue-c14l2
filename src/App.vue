@@ -2,6 +2,19 @@
 import TheHeader from './components/Header.vue';
 import TheFooter from './components/Footer.vue';
 import Boutique from './features/boutique/Boutique.vue';
+import Admin from './features/admin/Admin.vue';
+import { reactive, type Component as C } from 'vue';
+
+const state = reactive<{
+    page: Page
+}>({
+    page: 'Boutique'
+})
+
+const pages: { [s: string]: C } = {
+    Boutique,
+    Admin
+}
 </script>
 
 <template>
