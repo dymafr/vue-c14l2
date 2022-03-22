@@ -16,11 +16,15 @@ const pages: { [s: string]: C } = {
     Boutique,
     Admin
 }
+
+function navigate(page: Page): void {
+    state.page = page;
+}
 </script>
 
 <template>
   <div class="app-container">
-    <TheHeader class="header" />
+    <TheHeader @navigate="navigate" :page="state.page" class="header" />
     <div class="app-content">
       <Component :is="pages[state.page]" />
     </div>
